@@ -1,6 +1,29 @@
+body{  background-image: url("logo.png");
+  background-repeat: no-repeat;
+  background-size: 100% ;
+}
+
 .App {
   text-align: center;
 }
+
+
+.process{
+  background-color: rgba(0, 195, 255, 0.247);
+}
+
+
+
+.taskred{
+  background-color: red;
+}
+
+
+.taskgreen{
+  background-color: rgb(53, 230, 53);
+}
+
+
 
 .App-logo {
   height: 40vmin;
