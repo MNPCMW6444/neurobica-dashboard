@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     const get = async () => {
-      const res =await Axios.get("http://localhost:5000/getallmy");
+      const res =await Axios.get("https://gergergreg.herokuapp.com/getallmy");
       setPros(res.data);
     };
     get();
@@ -32,9 +32,13 @@ function App() {
           </div>
           {pro && pro.tasks ? pro.tasks.map((task, j) =>  
             (
-              <button 
+              <><button 
+              style={{
+                
+
+              }}
                onClick={async () => {
-                  const res3 =  await Axios.post("http://localhost:5000/color", {id:pro._id,i:j});
+                  const res3 =  await Axios.post("https://gergergreg.herokuapp.com/color", {id:pro._id,i:j});
                   setrefresh(Math.random());
                 }}
                 onContextMenu={(e) => {
@@ -51,32 +55,35 @@ function App() {
                 className={task.complete ? "taskgreen" : "taskred"}
               >
                 {task.name}
-              </button>
+              </button> <span className="arrow">></span></>
             )
           ) : (<div className="task">ללא משימה</div>)}
           <button
+          className="taskred2"
             onClick={async () => {
-              const res1 =  await Axios.post("http://localhost:5000/sendtask", {name:Math.random(),id:pro._id});
+              const res1 =  await Axios.post("https://gergergreg.herokuapp.com/sendtask", {name:Math.random(),id:pro._id});
               setrefresh(Math.random());
             }}
           >
             add task
           </button>
         </div>)) : <div>ללא</div>}
-    
+        <br></br>
+        <br></br>
       <button
+        className="taskred2"
         onClick={async() => {
 
-          const res2 =  await Axios.post("http://localhost:5000/sendpro", {header:"header"});
+          const res2 =  await Axios.post("https://gergergreg.herokuapp.com/sendpro", {header:"header"});
           setrefresh(Math.random());
 
         }}
       >
         add process
       </button>
-      {edit && <div><label>Name the task: </label><input value={data} onChange={(e) => setdata(e.target.value)}></input><button onClick={async()=>{
+      {edit && <div style={{backgroundColor:"white"}}><label>Name the task: </label><input value={data} onChange={(e) => setdata(e.target.value)}></input><button onClick={async()=>{
 
-const res5 =  await Axios.post("http://localhost:5000/name", {id:iid,i:ii,name:data});
+const res5 =  await Axios.post("https://gergergreg.herokuapp.com/name", {id:iid,i:ii,name:data});
 setrefresh(Math.random());
 setedit(null);
 setdata(null);

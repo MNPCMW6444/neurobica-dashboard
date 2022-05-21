@@ -6,22 +6,43 @@ body{  background-image: url("logo.png");
 .App {
   text-align: center;
 }
+h1{color:blue;
+
+font-weight: 900;
+font-size: 50pt;
+background-color:rgba(248, 253, 255, 0.425);
+}
 
 
 .process{
-  background-color: rgba(0, 195, 255, 0.247);
+  background-color: rgba(248, 253, 255, 0.425);
 }
 
 
 
 .taskred{
   background-color: red;
-}
+font-size: 30pt;
+border-radius: 18%;}
+
+.taskred2{
+  background-color: rgb(0, 255, 234);
+font-size: 30pt;
+border-radius: 18%;}
+
 
 
 .taskgreen{
   background-color: rgb(53, 230, 53);
+font-size: 30pt;
+border-radius: 18%;}
+
+.arrow{
+  color:blue;
+font-size: 40pt;
+font-weight: 900;
 }
+
 
 
 
